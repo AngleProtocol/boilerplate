@@ -1,0 +1,6 @@
+{
+  "0": "zero address",
+  "23": "burn amount exceeds allowance",
+  "35": "sender is not minter",
+  "36": "invalid sender"
+}
