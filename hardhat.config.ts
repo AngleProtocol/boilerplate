@@ -125,12 +125,6 @@ const config: HardhatUserConfig = {
       url: nodeUrl('mainnetForkRemote'),
       chainId: 1,
     },
-    mumbai: {
-      live: true,
-      url: nodeUrl('mumbai'),
-      accounts: accounts('mumbai'),
-      gas: 'auto',
-    },
     polygon: {
       live: true,
       url: nodeUrl('polygon'),
@@ -189,13 +183,8 @@ const config: HardhatUserConfig = {
     cache: 'cache-hh',
   },
   namedAccounts: {
-    deployer: 0,
-    guardian: 1,
-    governor: 2,
-    proxyAdmin: 3,
-    alice: 4,
-    bob: 5,
-    charlie: 6,
+    bob: 0,
+    alice: 1,
   },
   contractSizer: {
     alphaSort: true,
@@ -221,19 +210,11 @@ const config: HardhatUserConfig = {
     flat: true,
     spacing: 2,
   },
-  tenderly: {
-    project: process.env.TENDERLY_PROJECT || '',
-    username: process.env.TENDERLY_USERNAME || '',
-  },
   etherscan: {
     // eslint-disable-next-line
     // @ts-ignore
     apiKey: {
       mainnet: process.env.ETHERSCAN_API_KEY,
-      optimisticEthereum: process.env.OPTIMISM_ETHERSCAN_API_KEY,
-      arbitrumOne: process.env.ARBITRUM_ETHERSCAN_API_KEY,
-      avalanche: process.env.AVALANCHE_ETHERSCAN_API_KEY,
-      polygon: process.env.POLYGON_ETHERSCAN_API_KEY,
     },
     // apiKey: process.env.ETHERSCAN_API_KEY,
   },

@@ -2,6 +2,7 @@
   "extends": "solhint:recommended",
   "plugins": ["prettier"],
   "rules": {
+    "const-name-snakecase": "warn",
     "prettier/prettier": "warning",
     "ordering": "off",
     "mark-callable-contracts": "off",
