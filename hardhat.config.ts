@@ -9,12 +9,8 @@ import 'hardhat-docgen';
 import 'hardhat-deploy';
 import 'hardhat-abi-exporter';
 import '@nomiclabs/hardhat-ethers';
-import '@nomiclabs/hardhat-truffle5';
-import '@nomiclabs/hardhat-solhint';
 import '@nomiclabs/hardhat-etherscan';
 import '@openzeppelin/hardhat-upgrades';
-import 'solidity-coverage';
-import '@tenderly/hardhat-tenderly';
 import '@typechain/hardhat';
 
 import { TASK_COMPILE_SOLIDITY_GET_SOURCE_PATHS } from 'hardhat/builtin-tasks/task-names';
@@ -52,7 +48,6 @@ const config: HardhatUserConfig = {
             enabled: true,
             runs: 1000000,
           },
-          // debug: { revertStrings: 'strip' },
         },
       },
     ],
@@ -216,7 +211,6 @@ const config: HardhatUserConfig = {
     apiKey: {
       mainnet: process.env.ETHERSCAN_API_KEY,
     },
-    // apiKey: process.env.ETHERSCAN_API_KEY,
   },
   typechain: {
     outDir: 'typechain',
