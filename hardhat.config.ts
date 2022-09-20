@@ -8,10 +8,9 @@ import 'hardhat-spdx-license-identifier';
 import 'hardhat-docgen';
 import 'hardhat-deploy';
 import 'hardhat-abi-exporter';
-import '@nomiclabs/hardhat-ethers';
-import '@nomiclabs/hardhat-etherscan';
+import '@nomicfoundation/hardhat-chai-matchers'; /** NEW FEATURE - https://hardhat.org/hardhat-chai-matchers/docs/reference#.revertedwithcustomerror */
+import '@nomicfoundation/hardhat-toolbox'; /** NEW FEATURE */
 import '@openzeppelin/hardhat-upgrades';
-import '@typechain/hardhat';
 
 import { TASK_COMPILE_SOLIDITY_GET_SOURCE_PATHS } from 'hardhat/builtin-tasks/task-names';
 import { HardhatUserConfig, subtask } from 'hardhat/config';
@@ -192,7 +191,7 @@ const config: HardhatUserConfig = {
   },
   spdxLicenseIdentifier: {
     overwrite: true,
-    runOnCompile: false,
+    runOnCompile: true,
   },
   docgen: {
     path: './docs',
