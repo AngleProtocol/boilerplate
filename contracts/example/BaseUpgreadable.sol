@@ -12,3 +12,12 @@ contract BaseV1 is Initializable {
         id = _id;
     }
 }
+
+contract BaseV2 is Initializable {
+    string public constant SYMBOL = "ANGLE";
+    uint256 public id;
+
+    function initialize(uint256 _id) public initializer {
+        id = _id;
+    }
+}

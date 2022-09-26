@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 
 contract Base {
     bool public isBase = true;
-    address private _owner;
+    address public owner;
 
     /** Errors */
     error NotOwner();
@@ -12,12 +12,12 @@ contract Base {
     /** Events */
     event OwnerCall();
 
-    constructor(address owner) {
-        _owner = owner;
+    constructor(address owner_) {
+        owner = owner_;
     }
 
     function isOwner() external returns (bool) {
-        if (msg.sender != _owner) revert NotOwner();
+        if (msg.sender != owner) revert NotOwner();
         else {
             emit OwnerCall();
             return true;

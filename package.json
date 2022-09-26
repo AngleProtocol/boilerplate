@@ -9,6 +9,8 @@
     "etherscan:mainnet": "hardhat --network mainnet etherscan-verify",
     "etherscan:rinkeby": "hardhat --network rinkeby etherscan-verify",
     "etherscan:polygon": "hardhat --network polygon etherscan-verify",
+    "foundry:run": "docker run -it --rm -v $(pwd):/app -w /app ghcr.io/foundry-rs/foundry sh",
+    "foundry:test": "forge test -vvvv",
     "license": "hardhat prepend-spdx-license",
     "lint": "yarn lint:sol && yarn lint:js:fix",
     "lint:js:fix": "eslint --ignore-path .gitignore --fix --max-warnings 30 'test/**/*.{js,ts}' '*.{js,ts}'",
@@ -21,9 +23,7 @@
     "prettier": "yarn prettier:js && yarn prettier:sol",
     "prettier:sol": "prettier --write 'contracts/**/*.sol'",
     "prettier:js": "prettier --write 'test/**/*.{js,ts}' '*.{js,ts}'",
-    "size": "hardhat size-contracts",
-    "foundry:run": "docker run -it --rm -v $(pwd):/app -w /app ghcr.io/foundry-rs/foundry sh",
-    "foundry:test": "forge test -vvvv"
+    "size": "hardhat size-contracts"
   },
   "keywords": [],
   "author": "Angle Core Team",
