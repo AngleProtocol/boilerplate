@@ -9,6 +9,7 @@ contract BaseTest is Test {
     Base public base;
 
     function setUp() public {
+        // TODO: add label
         base = new Base(msg.sender);
     }
 
@@ -17,8 +18,15 @@ contract BaseTest is Test {
         return 1;
     }
 
+    // TODO: Deployment check
     function testExample1() public view {
         console.log("Calling first test");
         assert(base.isBase() == true);
     }
+
+    // TODO: use assertEq
+
+    // TODO: with Fuzzing
+
+    // TODO: Customized errors
 }
