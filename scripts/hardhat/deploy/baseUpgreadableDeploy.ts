@@ -1,13 +1,12 @@
 // import { ethers, upgrades } from 'hardhat';
 
 // async function main() {
-//   /** FILL PROXY ADDRESS AS AN ARG */
-//   const proxyAddress = '';
 //   const [deployer] = await ethers.getSigners();
 //   console.log('Deploying contracts with the account:', deployer.address);
-//   const BaseFactoryV2 = await ethers.getContractFactory('BaseV2');
-//   await upgrades.upgradeProxy(proxyAddress, BaseFactoryV2);
-//   console.log('Contract updated');
+//   const BaseFactoryV1 = await ethers.getContractFactory('BaseV1');
+//   const baseV1 = await upgrades.deployProxy(BaseFactoryV1, [deployer.address]);
+//   console.log('Contract deployed at address', baseV1?.address);
+//   await baseV1.deployed();
 // }
 
 // // We recommend this pattern to be able to use async/await everywhere

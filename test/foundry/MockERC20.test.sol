@@ -28,7 +28,7 @@ contract MockERC20Test is Test {
         return 1;
     }
 
-    function testDeploymentTest() public payable {
+    function testDeployment() public payable {
         assertEq(token.owner(), address(this));
         assertEq(token.name(), "Mock Token");
         assertEq(token.symbol(), "MTK");
@@ -40,9 +40,25 @@ contract MockERC20Test is Test {
         assertEq(bob.balance, 10 ether);
     }
 
-    // TODO: mint, transfer
+    function testMint1() public {
+        token.mint(alice, 100);
+        assertEq(token.balanceOf(alice), 100);
+        assertEq(token.balanceOf((bob)), 0);
+    }
 
-    // TODO: with Fuzzing
+    function testMintTransfer(uint256 _amount, uint256 _toTransfer) public {
+        vm.assume(_amount <= 1000000);
+        vm.assume(_toTransfer <= _amount);
+        token.mint(alice, _amount);
+        assertEq(token.balanceOf(alice), _amount);
+        assertEq(token.balanceOf((bob)), 0);
+        vm.prank(alice);
+        token.approve(address(this), 1000000);
+        vm.stopPrank();
+        token.transferFrom(alice, bob, _toTransfer);
+        assertEq(token.balanceOf(alice), _amount - _toTransfer);
+        assertEq(token.balanceOf((bob)), _toTransfer);
+    }
 
     // TODO: Customized errors
 }

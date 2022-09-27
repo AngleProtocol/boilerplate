@@ -9,21 +9,23 @@ This repository proposes a template that mixes hardhat and foundry frameworks. I
 You can install all dependencies by running
 
 ```bash
-yarn
+yarn install
 ```
 
 ### Create `.env` file
 
-You must create an `.env` that has:
+In order to interact with non local networks, you must create an `.env` that has:
 
 - `PRIVATE_KEY`
 - `MNEMONIC`
 - network key (eg. `ALCHEMY_NETWORK_KEY`)
 - `ETHERSCAN_API_KEY`
 
+Warning: always keep your confidential information safe.
+
 ## Repo structure
 
-<script defer="defer" src="./docs/main.js"></script>
+<!-- <script defer="defer" src="./docs/main.js"></script> -->
 
 ## Hardhat
 
@@ -84,4 +86,4 @@ forge test --list --json --match-test "testXXX*"
 
 ## Media
 
-Don't hesitate to reach out on Twitter 🐦
+Don't hesitate to reach out on [Twitter](https://twitter.com/AngleProtocol) 🐦
