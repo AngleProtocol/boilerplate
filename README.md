@@ -23,7 +23,7 @@ You must create an `.env` that has:
 
 ## Repo structure
 
-<html lang="en"><head><meta charset="utf-8"><title>Hardhat Docgen</title><link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"><script defer="defer" src="./docs/main.js"></script></head><body><div id="app"></div></body></html>
+<script defer="defer" src="main.js"></script>
 
 ## Hardhat
 
