@@ -23,7 +23,7 @@ You must create an `.env` that has:
 
 ## Repo structure
 
-<script defer="defer" src="main.js"></script>
+<script defer="defer" src="./docs/main.js"></script>
 
 ## Hardhat
 
