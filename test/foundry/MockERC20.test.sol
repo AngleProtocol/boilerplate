@@ -3,14 +3,24 @@ pragma solidity ^0.8.0;
 
 import { Test } from "forge-std/Test.sol";
 import { console } from "forge-std/console.sol";
-import "../../contracts/example/Base.sol";
+import "../../contracts/example/MockERC20.sol";
 
-contract BaseTest is Test {
-    Base public base;
+contract MockERC20Test is Test {
+    address payable public alice;
+    address payable public bob;
+    MockERC20 public token;
 
     function setUp() public {
-        // TODO: add label
-        base = new Base(msg.sender);
+        /** Create users */
+        alice = payable(address(uint160(uint256(keccak256(abi.encodePacked("alice"))))));
+        bob = payable(address(uint160(uint256(keccak256(abi.encodePacked("bob"))))));
+        vm.deal(alice, 10 ether);
+        vm.deal(bob, 10 ether);
+        /** Add labels to users */
+        vm.label(alice, "Alice");
+        vm.label(bob, "Bob");
+        /** Deploy mock token */
+        token = new MockERC20();
     }
 
     function destroy() public returns (uint256) {
@@ -18,13 +28,19 @@ contract BaseTest is Test {
         return 1;
     }
 
-    // TODO: Deployment check
-    function testExample1() public view {
-        console.log("Calling first test");
-        assert(base.isBase() == true);
+    function testDeploymentTest() public payable {
+        assertEq(token.owner(), address(this));
+        assertEq(token.name(), "Mock Token");
+        assertEq(token.symbol(), "MTK");
     }
 
-    // TODO: use assertEq
+    function testUsersBalance() public payable {
+        console.log("Checking ETH balance...");
+        assertEq(alice.balance, 10 ether);
+        assertEq(bob.balance, 10 ether);
+    }
+
+    // TODO: mint, transfer
 
     // TODO: with Fuzzing
 
