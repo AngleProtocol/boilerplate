@@ -1,5 +1,7 @@
 # <img src="logo.svg" alt="Angle Borrowing Module" height="40px"> Angle Project Boilerplate
 
+This repository proposes a template that mixes hardhat and foundry frameworks. It also provides templates for EVM compatible smart contracts (in `./contracts/examples`), tests and deployment scripts.
+
 ## Starting
 
 ### Install packages
@@ -16,6 +18,12 @@ You must create an `.env` that has:
 
 - `PRIVATE_KEY`
 - `MNEMONIC`
+- network key (eg. `ALCHEMY_NETWORK_KEY`)
+- `ETHERSCAN_API_KEY`
+
+## Repo structure
+
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Hardhat Docgen</title><link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"><script defer="defer" src="main.js"></script></head><body><div id="app"></div></body></html>
 
 ## Hardhat
 
