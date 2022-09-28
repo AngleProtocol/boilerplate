@@ -28,6 +28,7 @@ slither.db.json
 # Test output
 coverage
 coverage.json
+lcov.info
 
 # Running output
 gas-report.txt

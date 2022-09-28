@@ -3,8 +3,8 @@ import { ethers } from 'hardhat';
 async function main() {
   const [deployer] = await ethers.getSigners();
   console.log('Deploying contracts with the account:', deployer.address);
-  const MockERC20Factory = await ethers.getContractFactory('MockERC20', { signer: deployer });
-  const token = await MockERC20Factory.deploy();
+  const MockAgEURFactory = await ethers.getContractFactory('MockAgEUR', { signer: deployer });
+  const token = await MockAgEURFactory.deploy();
   console.log('Contract deployed at address', token?.address);
   await token.deployed();
 }

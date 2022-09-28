@@ -5,7 +5,6 @@
 import 'dotenv/config';
 import 'hardhat-contract-sizer';
 import 'hardhat-spdx-license-identifier';
-import 'hardhat-docgen';
 import 'hardhat-deploy';
 import 'hardhat-abi-exporter';
 import '@nomicfoundation/hardhat-chai-matchers'; /** NEW FEATURE - https://hardhat.org/hardhat-chai-matchers/docs/reference#.revertedwithcustomerror */
@@ -16,7 +15,7 @@ import { TASK_COMPILE_SOLIDITY_GET_SOURCE_PATHS } from 'hardhat/builtin-tasks/ta
 import { HardhatUserConfig, subtask } from 'hardhat/config';
 import yargs from 'yargs';
 
-import { accounts, nodeUrl } from './utils/network';
+import { accounts, etherscanKey, nodeUrl } from './utils/network';
 
 // Otherwise, ".sol" files from "test" are picked up during compilation and throw an error
 subtask(TASK_COMPILE_SOLIDITY_GET_SOURCE_PATHS).setAction(async (_, __, runSuper) => {
@@ -106,14 +105,6 @@ const config: HardhatUserConfig = {
         : { auto: true },
       chainId: 1337,
     },
-    rinkeby: {
-      live: true,
-      url: nodeUrl('rinkeby'),
-      accounts: accounts('rinkeby'),
-      gas: 'auto',
-      // gasPrice: 12e8,
-      chainId: 4,
-    },
     mainnetForkRemote: {
       live: false,
       url: nodeUrl('mainnetForkRemote'),
@@ -126,6 +117,11 @@ const config: HardhatUserConfig = {
       gas: 'auto',
       chainId: 137,
       gasPrice: 200e9,
+      verify: {
+        etherscan: {
+          apiKey: etherscanKey('polygon'),
+        },
+      },
     },
     fantom: {
       live: true,
@@ -133,6 +129,11 @@ const config: HardhatUserConfig = {
       accounts: accounts('fantom'),
       gas: 'auto',
       chainId: 250,
+      verify: {
+        etherscan: {
+          apiKey: etherscanKey('fantom'),
+        },
+      },
     },
     mainnet: {
       live: true,
@@ -141,6 +142,11 @@ const config: HardhatUserConfig = {
       gas: 'auto',
       gasMultiplier: 1.3,
       chainId: 1,
+      verify: {
+        etherscan: {
+          apiKey: etherscanKey('mainnet'),
+        },
+      },
     },
     optimism: {
       live: true,
@@ -148,6 +154,11 @@ const config: HardhatUserConfig = {
       accounts: accounts('optimism'),
       gas: 'auto',
       chainId: 10,
+      verify: {
+        etherscan: {
+          apiKey: etherscanKey('optimism'),
+        },
+      },
     },
     arbitrum: {
       live: true,
@@ -155,6 +166,11 @@ const config: HardhatUserConfig = {
       accounts: accounts('arbitrum'),
       gas: 'auto',
       chainId: 42161,
+      verify: {
+        etherscan: {
+          apiKey: etherscanKey('arbitrum'),
+        },
+      },
     },
     avalanche: {
       live: true,
@@ -162,6 +178,11 @@ const config: HardhatUserConfig = {
       accounts: accounts('avalanche'),
       gas: 'auto',
       chainId: 43114,
+      verify: {
+        etherscan: {
+          apiKey: etherscanKey('avalanche'),
+        },
+      },
     },
     aurora: {
       live: true,
@@ -169,6 +190,11 @@ const config: HardhatUserConfig = {
       accounts: accounts('aurora'),
       gas: 'auto',
       chainId: 1313161554,
+      verify: {
+        etherscan: {
+          apiKey: etherscanKey('aurora'),
+        },
+      },
     },
   },
   paths: {
@@ -193,11 +219,6 @@ const config: HardhatUserConfig = {
     overwrite: true,
     runOnCompile: true,
   },
-  docgen: {
-    path: './docs',
-    clear: true,
-    runOnCompile: false,
-  },
   abiExporter: {
     path: './export/abi',
     clear: true,
@@ -205,11 +226,7 @@ const config: HardhatUserConfig = {
     spacing: 2,
   },
   etherscan: {
-    // eslint-disable-next-line
-    // @ts-ignore
-    apiKey: {
-      mainnet: process.env.ETHERSCAN_API_KEY,
-    },
+    apiKey: process.env.ETHERSCAN_API_KEY,
   },
   typechain: {
     outDir: 'typechain',

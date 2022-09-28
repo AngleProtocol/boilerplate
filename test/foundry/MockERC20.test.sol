@@ -3,12 +3,12 @@ pragma solidity ^0.8.0;
 
 import { Test } from "forge-std/Test.sol";
 import { console } from "forge-std/console.sol";
-import "../../contracts/example/MockERC20.sol";
+import "../../contracts/example/MockAgEUR.sol";
 
-contract MockERC20Test is Test {
+contract MockAgEURTest is Test {
     address payable public alice;
     address payable public bob;
-    MockERC20 public token;
+    MockAgEUR public token;
 
     function setUp() public {
         /** Create users */
@@ -20,7 +20,7 @@ contract MockERC20Test is Test {
         vm.label(alice, "Alice");
         vm.label(bob, "Bob");
         /** Deploy mock token */
-        token = new MockERC20();
+        token = new MockAgEUR();
     }
 
     function destroy() public returns (uint256) {

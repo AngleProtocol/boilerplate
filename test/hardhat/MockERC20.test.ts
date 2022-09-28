@@ -3,17 +3,17 @@ import { expect } from 'chai';
 import { BigNumber } from 'ethers';
 import { ethers } from 'hardhat';
 
-import { MockERC20 as ERC20 } from '../../typechain';
+import { MockAgEUR as ERC20 } from '../../typechain';
 
 describe('Mock ERC20 tests', async function () {
   async function deployContract() {
     const [alice, bob] = await ethers.getSigners();
-    const MockERC20Factory = await ethers.getContractFactory('MockERC20', { signer: alice });
-    const token = (await MockERC20Factory.deploy()) as ERC20;
+    const MockAgEURFactory = await ethers.getContractFactory('MockAgEUR', { signer: alice });
+    const token = (await MockAgEURFactory.deploy()) as ERC20;
     return { alice, bob, token };
   }
   it('success - check contract deployment', async () => {
-    const { alice, token } = await loadFixture(deployContract); /** NEW FEATURE - `LoadMixture` */
+    const { alice, token } = await loadFixture(deployContract);
     expect(await token.symbol()).to.equal('MTK');
     expect(await token.name()).to.equal('Mock Token');
     expect(await token.owner()).to.equal(alice.address);
