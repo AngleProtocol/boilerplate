@@ -23,6 +23,14 @@ In order to interact with non local networks, you must create an `.env` that has
 
 Warning: always keep your confidential information safe.
 
+## Headers
+
+To automatically create headers, follow: https://github.com/Picodes/headers
+
+## Command line completion
+
+Follow these instructions to have hardhat command line arguments completion: https://hardhat.org/hardhat-runner/docs/guides/command-line-completion
+
 ## Repo structure
 
 <!-- <script defer="defer" src="./docs/main.js"></script> -->
