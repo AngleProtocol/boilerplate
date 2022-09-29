@@ -76,4 +76,12 @@ contract MockAgEURTest is Test {
     function testBalance() public {
         assertEq(address(0).balance, 0);
     }
+
+    // ================================= OPERATORS =================================
+
+    function testOperators() public {
+        uint256 a = 0;
+        assertEq(a++, 0);
+        assertEq(a, 1);
+    }
 }
