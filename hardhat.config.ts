@@ -88,27 +88,7 @@ const config: HardhatUserConfig = {
       blockGasLimit: 125e5,
       initialBaseFeePerGas: 0,
       hardfork: 'london',
-      forking: {
-        enabled: argv.fork || false,
-        // For mainnet
-        // url: nodeUrl('fork'),
-        // blockNumber: 14665543,
-        // For Polygon
-        url: nodeUrl('forkpolygon'),
-        blockNumber: 26536036,
-      },
-      mining: argv.disableAutoMining
-        ? {
-            auto: false,
-            interval: 1000,
-          }
-        : { auto: true },
       chainId: 1337,
-    },
-    mainnetForkRemote: {
-      live: false,
-      url: nodeUrl('mainnetForkRemote'),
-      chainId: 1,
     },
     polygon: {
       live: true,
@@ -145,6 +125,19 @@ const config: HardhatUserConfig = {
       verify: {
         etherscan: {
           apiKey: etherscanKey('mainnet'),
+        },
+      },
+    },
+    goerli: {
+      live: true,
+      url: nodeUrl('goerli'),
+      accounts: accounts('goerli'),
+      gas: 'auto',
+      gasMultiplier: 1.3,
+      chainId: 1,
+      verify: {
+        etherscan: {
+          apiKey: etherscanKey('goerli'),
         },
       },
     },

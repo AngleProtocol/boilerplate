@@ -37,6 +37,7 @@ addresses.json
 blockchain_db
 ganache*
 yarn-error.log
+broadcast
 
 # deployments
 deployments/localhost

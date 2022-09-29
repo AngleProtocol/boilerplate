@@ -9,7 +9,7 @@ This repository proposes a template that mixes hardhat and foundry frameworks. I
 You can install all dependencies by running
 
 ```bash
-yarn install
+yarn
 ```
 
 ### Create `.env` file
@@ -21,25 +21,19 @@ In order to interact with non local networks, you must create an `.env` that has
 - network key (eg. `ALCHEMY_NETWORK_KEY`)
 - `ETHERSCAN_API_KEY`
 
+For additional keys, you can check the `.env.example` file.
+
 Warning: always keep your confidential information safe.
 
 ## Headers
 
 To automatically create headers, follow: https://github.com/Picodes/headers
 
-## Command line completion
+## Hardhat Command line completion
 
 Follow these instructions to have hardhat command line arguments completion: https://hardhat.org/hardhat-runner/docs/guides/command-line-completion
 
-## Repo structure
-
-<!-- <script defer="defer" src="./docs/main.js"></script> -->
-
-## Hardhat
-
-## Foundry
-
-### Installation
+## Foundry Installation
 
 ```bash
 curl -L https://foundry.paradigm.xyz | bash
@@ -54,6 +48,12 @@ To install the standard library:
 
 ```bash
 forge install foundry-rs/forge-std
+```
+
+To update libraries:
+
+```bash
+forge update
 ```
 
 ### Foundry on Docker 🐳
@@ -90,6 +90,45 @@ You can also list tests:
 ```bash
 forge test --list
 forge test --list --json --match-test "testXXX*"
+```
+
+### Deploying
+
+There is an example script in the `scripts/foundry` folder. Then you can run:
+
+```bash
+yarn foundry:deploy <FILE_NAME> --rpc-url <NETWORK_NAME>
+```
+
+Example:
+
+```bash
+yarn foundry:deploy scripts/foundry/DeployMockAgEUR.sol --rpc-url goerli
+```
+
+### Coverage
+
+We recommend the use of this [vscode extension](ryanluker.vscode-coverage-gutters).
+
+```bash
+yarn hardhat:coverage
+yarn foundry:coverage
+```
+
+### Gas report
+
+```bash
+yarn foundry:gas
+```
+
+## Slither
+
+```bash
+pip3 install slither-analyzer
+pip3 install solc-select
+solc-select install 0.8.11
+solc-select use 0.8.11
+slither .
 ```
 
 ## Media

@@ -35,7 +35,6 @@ contract MockAgEURTest is Test {
     }
 
     function testUsersBalance() public payable {
-        console.log("Checking ETH balance...");
         assertEq(alice.balance, 10 ether);
         assertEq(bob.balance, 10 ether);
     }
@@ -60,5 +59,21 @@ contract MockAgEURTest is Test {
         assertEq(token.balanceOf((bob)), _toTransfer);
     }
 
-    // TODO: Customized errors
+    // ================================ TEST IN FORK ===============================
+
+    function testMainnetBalance() public {
+        uint256 mainnetForkId = vm.createFork("mainnet", 15_638_436);
+        vm.selectFork(mainnetForkId);
+        assertEq(address(0).balance, 11476070351253859226921);
+    }
+
+    function testPolygonBalance() public {
+        uint256 polygonForkId = vm.createFork("polygon", 33_710_302);
+        vm.selectFork(polygonForkId);
+        assertEq(address(0).balance, 58583241519411840754757);
+    }
+
+    function testBalance() public {
+        assertEq(address(0).balance, 0);
+    }
 }

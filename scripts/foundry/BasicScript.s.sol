@@ -2,14 +2,14 @@
 pragma solidity 0.8.12;
 
 import "forge-std/Script.sol";
-import "../../contracts/mock/MockToken.sol";
+import "../../contracts/example/MockAgEUR.sol";
 import { console } from "forge-std/console.sol";
 
 contract MyScript is Script {
     function test() external {
         vm.startBroadcast();
 
-        MockToken token = new MockToken("Name", "SYM", 18);
+        MockAgEUR token = new MockAgEUR();
         address _sender = address(uint160(uint256(keccak256(abi.encodePacked("sender")))));
         address _receiver = address(uint160(uint256(keccak256(abi.encodePacked("receiver")))));
 
