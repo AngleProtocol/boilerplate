@@ -49,35 +49,6 @@ const config: HardhatUserConfig = {
         },
       },
     ],
-    overrides: {
-      'contracts/vaultManager/VaultManager.sol': {
-        version: '0.8.12',
-        settings: {
-          optimizer: {
-            enabled: true,
-            runs: 1,
-          },
-        },
-      },
-      'contracts/reactor/EulerReactor.sol': {
-        version: '0.8.12',
-        settings: {
-          optimizer: {
-            enabled: true,
-            runs: 1000,
-          },
-        },
-      },
-      'contracts/router/AngleRouter01.sol': {
-        version: '0.8.12',
-        settings: {
-          optimizer: {
-            enabled: true,
-            runs: 1,
-          },
-        },
-      },
-    },
   },
   defaultNetwork: 'hardhat',
   // For the lists of Chain ID: https://chainlist.org

@@ -1519,6 +1519,19 @@
     proper-lockfile "^4.1.1"
     solidity-ast "^0.4.15"
 
+"@openzeppelin/upgrades-core@^1.20.0":
+  version "1.20.0"
+  resolved "https://registry.yarnpkg.com/@openzeppelin/upgrades-core/-/upgrades-core-1.20.0.tgz#0b9a7753dfe0b86370e113b48a1d241e92e57f5f"
+  integrity sha512-SYHguWgiVB5vqvIr8JrB+Dr6+Nbn1MnC+8NJJu42B7GwINM8u3IISAceGFD25g/jfWOAMxZwFqtkeoUCwITY0w==
+  dependencies:
+    cbor "^8.0.0"
+    chalk "^4.1.0"
+    compare-versions "^5.0.0"
+    debug "^4.1.1"
+    ethereumjs-util "^7.0.3"
+    proper-lockfile "^4.1.1"
+    solidity-ast "^0.4.15"
+
 "@scure/base@~1.1.0":
   version "1.1.1"
   resolved "https://registry.npmjs.org/@scure/base/-/base-1.1.1.tgz"

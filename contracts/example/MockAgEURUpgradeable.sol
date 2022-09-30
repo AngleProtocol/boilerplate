@@ -5,7 +5,13 @@ pragma solidity 0.8.12;
 import { ERC20 } from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import { Ownable } from "@openzeppelin/contracts/access/Ownable.sol";
 
-contract MockAgEUR is ERC20, Ownable {
+contract StorageV0 {
+    uint256 public a = 0;
+
+    uint256[49] private __gap;
+}
+
+contract MockAgEURUpgradeable is StorageV0, ERC20, Ownable {
     constructor() ERC20("Mock Token", "MTK") {}
 
     // ================================= FUNCTIONS =================================
