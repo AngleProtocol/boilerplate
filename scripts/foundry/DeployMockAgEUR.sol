@@ -7,7 +7,7 @@ import "../../../contracts/example/MockAgEUR.sol";
 
 contract DeployMockAgEUR is Script {
     function run() external {
-        uint256 deployerPrivateKey = vm.deriveKey(vm.envString("MNEMONIC_MAINNET"), 0);
+        uint256 deployerPrivateKey = vm.deriveKey(vm.envString("MNEMONIC_GOERLI"), 0);
         address deployer = vm.rememberKey(deployerPrivateKey);
 
         console.log("Deploying with ", deployer);
