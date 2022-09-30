@@ -43,10 +43,8 @@ jobs:
         run: |
           npm config set //registry.npmjs.org/
           yarn install --frozen-lockfile
-        # env:
-        #   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Run solhint
-        run: yarn solhint --fix --max-warnings 20 \"contracts/**/*.sol\"
+        run: yarn solhint --fix --max-warnings 20 'contracts/**/*.sol'
       - name: Run eslint
         run: yarn eslint --ignore-path .gitignore --fix --max-warnings 30 'test/**/*.{js,ts}' '*.{js,ts}'
 

@@ -1,5 +1,7 @@
 # <img src="logo.svg" alt="Angle Borrowing Module" height="40px"> Angle Project Boilerplate
 
+[![CI](https://github.com/AngleProtocol/boilerplate/workflows/CI/badge.svg)](https://github.com/AngleProtocol/boilerplate/actions?query=workflow%3ACI)
+
 This repository proposes a template that mixes hardhat and foundry frameworks. It also provides templates for EVM compatible smart contracts (in `./contracts/examples`), tests and deployment scripts.
 
 ## Starting
