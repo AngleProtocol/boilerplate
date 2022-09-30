@@ -6,7 +6,6 @@ __pycache__
 .docs
 .env
 node_modules
-tenderly.yaml
 venv
 
 # Build output
@@ -15,7 +14,6 @@ build
 export
 **/artifacts
 .openzeppelin
-solidity-flattenedContracts
 typechain
 slither-audit.txt
 slither
@@ -31,7 +29,6 @@ gas-report.txt
 gasReporterOutput.json
 addresses.json
 blockchain_db
-ganache*
 yarn-error.log
 broadcast
 
