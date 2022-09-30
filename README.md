@@ -10,6 +10,7 @@ You can install all dependencies by running
 
 ```bash
 yarn
+forge i
 ```
 
 ### Create `.env` file
@@ -103,7 +104,7 @@ yarn foundry:deploy <FILE_NAME> --rpc-url <NETWORK_NAME>
 Example:
 
 ```bash
-yarn foundry:deploy scripts/foundry/DeployMockAgEUR.sol --rpc-url goerli
+yarn foundry:deploy scripts/foundry/DeployMockAgEUR.s.sol --rpc-url goerli
 ```
 
 ### Coverage
