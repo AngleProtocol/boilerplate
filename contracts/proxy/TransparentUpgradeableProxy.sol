@@ -27,8 +27,6 @@ import "@openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol";
  * you should think of the `ProxyAdmin` instance as the real administrative interface of your proxy.
  */
 contract TransparentUpgradeableProxy is ERC1967Proxy {
-
-
     /**
      * @dev Modifier used internally that will delegate the call to the implementation unless the sender is the admin.
      */
@@ -39,7 +37,6 @@ contract TransparentUpgradeableProxy is ERC1967Proxy {
             _fallback();
         }
     }
-
 
     /**
      * @dev Initializes an upgradeable proxy managed by `_admin`, backed by the implementation at `_logic`, and
@@ -53,8 +50,6 @@ contract TransparentUpgradeableProxy is ERC1967Proxy {
         assert(_ADMIN_SLOT == bytes32(uint256(keccak256("eip1967.proxy.admin")) - 1));
         _changeAdmin(admin_);
     }
-
-
 
     /**
      * @dev Returns the current admin.
@@ -127,6 +122,4 @@ contract TransparentUpgradeableProxy is ERC1967Proxy {
     function _admin() internal view virtual returns (address) {
         return _getAdmin();
     }
-
-
 }
