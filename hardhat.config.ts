@@ -10,6 +10,10 @@ import 'hardhat-abi-exporter';
 import '@nomicfoundation/hardhat-chai-matchers'; /** NEW FEATURE - https://hardhat.org/hardhat-chai-matchers/docs/reference#.revertedwithcustomerror */
 import '@nomicfoundation/hardhat-toolbox'; /** NEW FEATURE */
 import '@openzeppelin/hardhat-upgrades';
+import '@nomiclabs/hardhat-truffle5';
+import '@nomiclabs/hardhat-solhint';
+import '@tenderly/hardhat-tenderly';
+import '@typechain/hardhat';
 
 import { TASK_COMPILE_SOLIDITY_GET_SOURCE_PATHS } from 'hardhat/builtin-tasks/task-names';
 import { HardhatUserConfig, subtask } from 'hardhat/config';
