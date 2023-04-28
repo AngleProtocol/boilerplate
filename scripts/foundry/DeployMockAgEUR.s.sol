@@ -3,9 +3,11 @@ pragma solidity ^0.8.12;
 
 import "forge-std/Script.sol";
 import { console } from "forge-std/console.sol";
-import "../../../contracts/example/MockAgEUR.sol";
+import "../../contracts/example/MockAgEUR.sol";
 
 contract DeployMockAgEUR is Script {
+    MockAgEUR public token;
+
     function run() external {
         uint256 deployerPrivateKey = vm.deriveKey(vm.envString("MNEMONIC_GOERLI"), 0);
         address deployer = vm.rememberKey(deployerPrivateKey);
@@ -14,7 +16,8 @@ contract DeployMockAgEUR is Script {
 
         vm.startBroadcast(deployer);
 
-        MockAgEUR token = new MockAgEUR();
+        token = new MockAgEUR();
+        console.log("Successfully deployed contract at the address: ", address(token));
 
         vm.stopBroadcast();
     }
