@@ -1,18 +1,18 @@
 // SPDX-License-Identifier: GPL-3.0
 
-pragma solidity 0.8.12;
+pragma solidity ^0.8.12;
 
-import { ERC20 } from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import { Ownable } from "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 
-contract StorageV0 {
-    uint256 public a = 0;
+contract MockAgEURUpgradeable is Initializable, ERC20Upgradeable, OwnableUpgradeable {
+    constructor() initializer {}
 
-    uint256[49] private __gap;
-}
-
-contract MockAgEURUpgradeable is StorageV0, ERC20, Ownable {
-    constructor() ERC20("Mock Token", "MTK") {}
+    function initialize(string memory _name, string memory _symbol) external initializer {
+        __ERC20_init_unchained(_name, _symbol);
+        __Ownable_init_unchained();
+    }
 
     // ================================= FUNCTIONS =================================
 

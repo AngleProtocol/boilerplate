@@ -44,8 +44,8 @@ async function main() {
 
   testUpgradeability('MockAgEURUpgradeable', 'contracts/example/MockAgEURUpgradeable.sol');
   testStorage(
-    'MockAgEURUpgradeable2',
-    'contracts/example/MockAgEURUpgradeable2.sol',
+    'MockAgEURUpgradeable',
+    'contracts/example/MockAgEURUpgradeable.sol',
     'MockAgEURUpgradeable',
     'contracts/example/MockAgEURUpgradeable.sol',
   );

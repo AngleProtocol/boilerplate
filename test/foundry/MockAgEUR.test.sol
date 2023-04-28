@@ -53,7 +53,6 @@ contract MockAgEURTest is Test {
         assertEq(token.balanceOf((bob)), 0);
         vm.prank(alice);
         token.approve(address(this), 1000000);
-        vm.stopPrank();
         token.transferFrom(alice, bob, _toTransfer);
         assertEq(token.balanceOf(alice), _amount - _toTransfer);
         assertEq(token.balanceOf((bob)), _toTransfer);

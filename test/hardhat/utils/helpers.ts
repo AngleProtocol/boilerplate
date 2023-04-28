@@ -139,6 +139,7 @@ async function deployUpgradeable(factory: ContractFactory, ...args: any[]): Prom
   return new Contract(Proxy.address, factory.interface, alice);
 }
 
+// eslint-disable-next-line
 async function deployUpgradeableUUPS(factory: ContractFactory, ...args: any[]): Promise<Contract> {
   const { deployer, alice } = await ethers.getNamedSigners();
 
