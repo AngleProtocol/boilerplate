@@ -30,11 +30,11 @@ Warning: always keep your confidential information safe.
 
 ## Headers
 
-To automatically create headers, follow: https://github.com/Picodes/headers
+To automatically create headers, follow: <https://github.com/Picodes/headers>
 
 ## Hardhat Command line completion
 
-Follow these instructions to have hardhat command line arguments completion: https://hardhat.org/hardhat-runner/docs/guides/command-line-completion
+Follow these instructions to have hardhat command line arguments completion: <https://hardhat.org/hardhat-runner/docs/guides/command-line-completion>
 
 ## Foundry Installation
 
@@ -116,6 +116,32 @@ We recommend the use of this [vscode extension](ryanluker.vscode-coverage-gutter
 ```bash
 yarn hardhat:coverage
 yarn foundry:coverage
+```
+
+### Simulate
+
+You can simulate your transaction live or in fork mode. For both option you need to
+complete the `scripts/foundry/Simulate.s.sol` with your values: address sending the tx,
+address caled and the data to give to this address call.
+
+For live simulation
+
+```bash
+yarn foundry:simulate
+```
+
+For fork simulation
+
+```bash
+yarn foundry:fork
+yarn foundry:simulate:fork
+```
+
+For fork simulation at a given block
+
+```bash
+yarn foundry:fork:block ${XXXX}
+yarn foundry:simulate:fork
 ```
 
 ### Gas report
