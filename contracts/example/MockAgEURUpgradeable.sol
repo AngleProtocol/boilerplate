@@ -11,7 +11,7 @@ contract MockAgEURUpgradeable is Initializable, ERC20Upgradeable, OwnableUpgrade
 
     function initialize(string memory _name, string memory _symbol) external initializer {
         __ERC20_init_unchained(_name, _symbol);
-        __Ownable_init_unchained();
+        __Ownable_init_unchained(msg.sender);
     }
 
     // ================================= FUNCTIONS =================================

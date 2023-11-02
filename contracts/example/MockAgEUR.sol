@@ -6,7 +6,7 @@ import "oz/token/ERC20/ERC20.sol";
 import "oz/access/Ownable.sol";
 
 contract MockAgEUR is ERC20, Ownable {
-    constructor() ERC20("Mock Token", "MTK") {}
+    constructor() ERC20("Mock Token", "MTK") Ownable(msg.sender) {}
 
     // ================================= FUNCTIONS =================================
 

@@ -3,7 +3,7 @@ pragma solidity ^0.8.20;
 
 import { console } from "forge-std/console.sol";
 
-import "../../contracts/example/MockAgEURUpgradeable.sol";
+import "../contracts/example/MockAgEURUpgradeable.sol";
 
 import "./Utils.s.sol";
 
