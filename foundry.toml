@@ -1,16 +1,16 @@
 [profile.default]
-src = 'contracts'
-out = 'out'
-test = 'test'
-libs = ['lib']
-script = 'scripts'
-cache_path = 'cache'
+src = "contracts"
+out = "out"
+test = "test"
+libs = ["lib"]
+script = "scripts"
+cache_path = "cache"
 gas_reports = ["*"]
 via_ir = true
 sizes = true
 optimizer = true
 optimizer_runs = 1000
-solc_version = '0.8.20'
+solc_version = "0.8.20"
 ffi = true
 
 [fuzz]
@@ -48,7 +48,7 @@ bsc = { key = "${BSC_ETHERSCAN_API_KEY}"}
 [profile.dev]
 optimizer = true
 via_ir = false
-src = 'test'
+src = "test"
 gas_reports = ["*"]
 
 [profile.dev.fuzz]
@@ -60,7 +60,7 @@ depth = 1
 fail_on_revert = false
 
 [profile.ci]
-src = 'test'
+src = "test"
 via_ir = false
 gas_reports = ["*"]
 

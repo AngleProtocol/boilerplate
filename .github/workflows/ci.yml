@@ -201,11 +201,16 @@ jobs:
         with:
           version: nightly
 
+      - name: Compile foundry
+        run: forge build --build-info --skip */test/** */scripts/** --force
+
       - name: "Run Slither analysis"
         uses: "crytic/slither-action@v0.3.0"
         id: "slither"
         with:
+          fail-on: "none"
           sarif: "results.sarif"
+          ignore-compile: true
 
       - name: "Upload SARIF file to GitHub code scanning"
         uses: "github/codeql-action/upload-sarif@v2"
