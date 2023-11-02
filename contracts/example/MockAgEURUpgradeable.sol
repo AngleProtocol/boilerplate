@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: GPL-3.0
 
-pragma solidity ^0.8.12;
+pragma solidity ^0.8.20;
 
-import "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol";
-import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
-import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
+import "oz-upgradeable/token/ERC20/ERC20Upgradeable.sol";
+import "oz-upgradeable/access/OwnableUpgradeable.sol";
+import "oz-upgradeable/proxy/utils/Initializable.sol";
 
 contract MockAgEURUpgradeable is Initializable, ERC20Upgradeable, OwnableUpgradeable {
     constructor() initializer {}

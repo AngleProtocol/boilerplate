@@ -1,8 +1,9 @@
-# <img src="logo.svg" alt="Angle Borrowing Module" height="40px"> Angle Project Boilerplate
+# <img src=".github/assets/logo.svg" alt="Angle" height="40px"> Angle Project Boilerplate
 
-[![CI](https://github.com/AngleProtocol/boilerplate/workflows/CI/badge.svg)](https://github.com/AngleProtocol/boilerplate/actions?query=workflow%3ACI)
+[![CI](https://github.com/AngleProtocol/boilerplate/actions/workflows/ci.yml/badge.svg)](https://github.com/AngleProtocol/boilerplate/actions)
+[![Coverage](https://codecov.io/gh/AngleProtocol/boilerplate/branch/main/graph/badge.svg)](https://codecov.io/gh/AngleProtocol/boilerplate)
 
-This repository proposes a template that mixes hardhat and foundry frameworks. It also provides templates for EVM compatible smart contracts (in `./contracts/examples`), tests and deployment scripts.
+This repository proposes a template that is based on foundry frameworks. It also provides templates for EVM compatible smart contracts (in `./contracts/example`), tests and deployment scripts.
 
 ## Starting
 

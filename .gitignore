@@ -9,15 +9,8 @@ node_modules
 venv
 
 # Build output
-/cache-hh
-build
-export
-**/artifacts
-.openzeppelin
-typechain
 slither-audit.txt
 slither
-slither.db.json
 
 # Test output
 coverage
@@ -42,4 +35,4 @@ bin
 
 # foundry
 /out
-/cache-forge
+/cache

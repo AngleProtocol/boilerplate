@@ -23,11 +23,6 @@ contract MockAgEURTest is Test {
         token = new MockAgEUR();
     }
 
-    function destroy() public returns (uint256) {
-        selfdestruct(payable(0));
-        return 1;
-    }
-
     function testDeployment() public payable {
         assertEq(token.owner(), address(this));
         assertEq(token.name(), "Mock Token");

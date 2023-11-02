@@ -1,4 +1,9 @@
 {
-  "filter_paths": "lib",
-  "solc_remaps": ["ds-test/=lib/ds-test/src/", "forge-std/=lib/forge-std/src/"]
+  "filter_paths": "(lib|test|external)",
+  "solc_remaps": [
+    "ds-test/=lib/ds-test/src/",
+    "forge-std/=lib/forge-std/src/",
+    "oz/=lib/openzeppelin-contracts/contracts/",
+    "oz-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/"
+  ]
 }
