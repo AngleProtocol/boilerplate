@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity ^0.8.12;
+pragma solidity ^0.8.20;
 
 import "forge-std/Script.sol";
 import { console } from "forge-std/console.sol";
-import "../../contracts/example/MockAgEUR.sol";
+import "../contracts/example/MockAgEUR.sol";
 
 contract DeployMockAgEUR is Script {
     MockAgEUR public token;

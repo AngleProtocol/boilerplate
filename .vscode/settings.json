@@ -1,12 +1,7 @@
 {
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[typescript]": {
-    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
-  },
+  "solidity.compileUsingRemoteVersion": "0.8.20",
   "[solidity]": {
-    "editor.defaultFormatter": "JuanBlanco.solidity"
+    "editor.defaultFormatter": "JuanBlanco.solidity",
+    "editor.formatOnSave": true
   },
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true
-  }
 }

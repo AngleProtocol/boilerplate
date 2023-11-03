@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: GPL-3.0
 
-pragma solidity ^0.8.12;
+pragma solidity ^0.8.20;
 
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
+import "oz/token/ERC20/ERC20.sol";
+import "oz/access/Ownable.sol";
 
 contract MockAgEUR is ERC20, Ownable {
-    constructor() ERC20("Mock Token", "MTK") {}
+    constructor() ERC20("Mock Token", "MTK") Ownable(msg.sender) {}
 
     // ================================= FUNCTIONS =================================
 

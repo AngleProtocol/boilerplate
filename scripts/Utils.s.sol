@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.12;
+pragma solidity ^0.8.20;
 
 import "forge-std/Script.sol";
-import "../../contracts/example/MockAgEUR.sol";
-import "../../contracts/proxy/ProxyAdmin.sol";
-import "../../contracts/proxy/TransparentUpgradeableProxy.sol";
+import "../contracts/example/MockAgEUR.sol";
+import "oz/proxy/transparent/ProxyAdmin.sol";
+import "oz/proxy/transparent/TransparentUpgradeableProxy.sol";
 
 import { console } from "forge-std/console.sol";
 
