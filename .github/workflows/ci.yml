@@ -182,6 +182,10 @@ jobs:
 
   slither-analyze:
     runs-on: "ubuntu-latest"
+    permissions:
+      actions: "read"
+      contents: "read"
+      security-events: "write"
     steps:
       - uses: actions/checkout@v3
         with:
@@ -193,13 +197,14 @@ jobs:
           version: nightly
 
       - name: Compile foundry
-        run: forge build --build-info --force
+        run: forge build --build-info --skip */test/** */scripts/** --force
 
       - name: See output
         run: ls -la out
 
       - name: "Run Slither analysis"
         uses: "crytic/slither-action@v0.3.0"
+        id: slither
         with:
           fail-on: "none"
           sarif: "results.sarif"
