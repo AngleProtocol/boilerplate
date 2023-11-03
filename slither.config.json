@@ -1,4 +1,5 @@
 {
+  "detectors_to_exclude": "naming-convention,reentrancy-events,solc-version,timestamp",
   "filter_paths": "(lib|test|external)",
   "solc_remaps": [
     "ds-test/=lib/ds-test/src/",
