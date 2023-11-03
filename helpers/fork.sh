@@ -31,6 +31,9 @@ function option_to_uri {
     "9")
         echo $ETH_NODE_URI_POLYGON_ZKEVM
         ;;
+    "10")
+        echo $ETH_NODE_URI_OPTIMISM
+        ;;
     *)
       ;;
   esac
