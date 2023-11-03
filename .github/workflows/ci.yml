@@ -181,6 +181,7 @@ jobs:
           echo "✅ Uploaded to Codecov" >> $GITHUB_STEP_SUMMARY
 
   slither-analyze:
+    needs: ["build", "lint"]
     runs-on: "ubuntu-latest"
     permissions:
       actions: "read"
