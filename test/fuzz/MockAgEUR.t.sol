@@ -24,8 +24,9 @@ contract MockAgEURFuzzTest is Test {
     }
 
     function testMintTransfer(uint256 _amount, uint256 _toTransfer) public {
-        vm.assume(_amount <= 1000000);
-        vm.assume(_toTransfer <= _amount);
+        _amount = bound(_amount, 0, 1000000);
+        _toTransfer = bound(_toTransfer, 0, _amount);
+
         token.mint(alice, _amount);
         assertEq(token.balanceOf(alice), _amount);
         assertEq(token.balanceOf((bob)), 0);
