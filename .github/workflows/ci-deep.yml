@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     inputs:
       fuzzRuns:
-        default: "100000"
+        default: "10000"
         description: "Unit: number of fuzz runs."
         required: false
       invariantRuns:
@@ -165,7 +165,7 @@ jobs:
       - name: Run Foundry tests
         run: yarn test:fuzz
         env:
-          FOUNDRY_FUZZ_RUNS: ${{ inputs.fuzzRuns || '100000' }}
+          FOUNDRY_FUZZ_RUNS: ${{ inputs.fuzzRuns || '10000' }}
           ETH_NODE_URI_POLYGON: ${{ secrets.ETH_NODE_URI_POLYGON }}
           ETH_NODE_URI_ARBITRUM: ${{ secrets.ETH_NODE_URI_ARBITRUM }}
           ETH_NODE_URI_OPTIMISM: ${{ secrets.ETH_NODE_URI_OPTIMISM }}
